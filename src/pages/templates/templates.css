@@ -1,0 +1,79 @@
+.template-container {
+    display: flex;
+    padding: 30px;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.form-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-section label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #E0E0E0;
+    font-size: 1rem;
+    color: #121217;
+}
+
+.preview-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    white-space: pre-line;
+    box-shadow: 0 0 10px rgba(100, 50, 100, 0.3);
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    border: 2px solid #121217;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.copy-button {
+    background: var(--header-bg);
+    color: var(--text-color);
+    margin-top: auto;
+    width: 30%;
+    height: 10%;
+    border-radius: 10px;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-weight: bold;
+    z-index: 9999;
+    animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -20px); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    90% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -20px); }
+}

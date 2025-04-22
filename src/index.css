@@ -1,0 +1,21 @@
+:root {
+  font-family: Montserrat, system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --header-bg: #2D2D34;
+  --title-accent: #4A90E2;
+  --title-accent-hover: #326fb3;
+  --site-bg: #121217;
+  --text-color: #E0E0E0;
+  --hover-bg: #2A2A38;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #F5F7FA;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
