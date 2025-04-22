@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TodoList.css';
+import './todolist.css';
 
 interface Task {
     id: number;
