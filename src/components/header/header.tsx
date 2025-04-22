@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import './Header.css';
+import './header.css';
 
 interface Props {
     href: string;
