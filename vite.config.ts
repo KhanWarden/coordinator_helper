@@ -5,8 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 8080, // выстави нужный
-    host: true  // чтобы был доступ извне контейнера
+    port: 8080,
+    host: '0.0.0.0',
+    allowedHosts: [
+        'coordinator.taldybayev.ru'
+    ]
   },
   preview: {
     port: 8080,
