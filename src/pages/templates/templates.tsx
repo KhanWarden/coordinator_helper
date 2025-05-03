@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import "./templates.css";
 
+const getTomorrowDate = (): string => {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    const day = String(tomorrow.getDate()).padStart(2, '0');
+    const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+
+    return `${day}.${month}`;
+};
+
+
 const TemplatesPage: React.FC = () => {
     const [customer, setCustomer] = useState("");
     const [date, setDate] = useState("");
@@ -11,16 +23,16 @@ const TemplatesPage: React.FC = () => {
     const [language, setLanguage] = useState("");
     const [showNotification, setShowNotification] = useState(false);
     const finalText = `
-        Здравствуйте, ${customer || "[Имя заказчика]"}!
-    
-        Меня зовут Батырхан, я координатор «Show Today».
-        У нас с Вами *на завтра (${date || "[дд.мм]"})* запланировано мероприятие *в ${time || "[время]"} в "${place || "заведение"}"*.
-        
-        Формат игры: ${format || "[формат игры]"}.
-        Длительность: ${duration || "[время]"} ч.
-        Язык проведения: ${language || "[язык]"}.
-        
-        Подскажите, пожалуйста, всё ли верно и остаётся без изменений?
+Здравствуйте, ${customer || "[Имя заказчика]"}!
+
+Меня зовут Батырхан, я координатор «Show Today».
+У нас с Вами *на завтра (${date || getTomorrowDate()})* запланировано мероприятие *в ${time || "[время]"} в "${place || "заведение"}"*.
+
+Формат игры: ${format || "[формат игры]"}.
+Длительность: ${duration || "[время]"} ч.
+Язык проведения: ${language || "[язык]"}.
+
+Подскажите, пожалуйста, всё ли верно и остаётся без изменений?
     `.trim();
 
     const copyToClipboard = () => {
