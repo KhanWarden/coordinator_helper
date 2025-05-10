@@ -122,7 +122,7 @@ const SchedulePage = () => {
         }
 
         try {
-            await axios.post('http://localhost:8000/api/v1/schedule/', {
+            await axios.post('https://api.taldybayev.ru/api/v1/schedule/', {
                 date: scheduleDate,
                 teams: result.teams
             })

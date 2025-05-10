@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:8000/api/v1/schedule/'
+const API_URL = 'http://api.taldybayev.ru/api/v1/schedule/'
 
 export const getSchedule = async (date: string) => {
     const response = await axios.get(API_URL + date)
