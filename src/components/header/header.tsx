@@ -21,7 +21,7 @@ const Header: React.FC = () => {
                             <NavDropdown.Item href="confirm" className="dropdown-item-custom">Играли ранее?</NavDropdown.Item>
                             <NavDropdown.Item href="confirm" className="dropdown-item-custom">Наличие экрана?</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="contacts" className="nav-item-custom">Контакты</Nav.Link>
+                        <Nav.Link href="schedule" className="nav-item-custom">Расписание</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
