@@ -1,79 +1,58 @@
-/* Стили для Navbar */
 .custom-navbar {
     background-color: var(--header-bg);
-    transition: background-color 0.3s ease;
     padding: 10px 0;
-    border-bottom: 1px solid #333;
 }
 
 .brand {
-    color: var(--title-accent);
     font-weight: bold;
     font-size: 1.5rem;
-    transition: color 0.3s ease;
+    color: var(--title-accent);
+    text-decoration: none;
 }
 
 .brand:hover {
     color: var(--title-accent-hover);
 }
 
-/* Стили для ссылок навигации */
-.nav-links .nav-link,
-.dropdown-custom .nav-link,
-.dropdown-custom .dropdown-toggle {
-    color: var(--text-color) !important;
-    padding: 10px 15px;
-    margin: 0 5px;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
+.custom-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-custom .dropdown-menu{
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.dropdown-custom:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
 }
 
-.nav-links .nav-link:hover,
-.dropdown-custom .dropdown-toggle:hover {
-    background-color: var(--hover-bg);
-    color: var(--text-color) !important;
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 0;
+    margin: 0;
+    border-radius: 0.25rem;
+    z-index: 1000;
+    top: 100%;
 }
 
-/* Стили для выпадающего меню */
-.dropdown-custom .dropdown-menu {
-    background-color: var(--header-bg);
-    margin: 0 -27px;
-    border: none;
-    border-radius: 10px;
-    animation: fadeIn 0.3s ease-in-out;
-    overflow: hidden;
-}
-
-/* Стили для пунктов выпадающего меню */
 .dropdown-item-custom {
-    color: var(--text-color);
-    padding: 10px 20px;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 0.5rem 1rem;
+    color: #212529;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
 }
 
 .dropdown-item-custom:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+}
+
+.nav-item-custom .nav-link {
     color: var(--text-color);
-    background-color: var(--hover-bg);
+    font-weight: 500;
 }
 
-/* Кастомный toggle для кнопки бургер-меню */
-.custom-toggler {
-    background-color: transparent;
-    border: 1px solid var(--title-accent);
-}
-
-/* Анимация для появления выпадающего меню */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.nav-item-custom .nav-link:hover {
+    color: #0d6efd;
 }
