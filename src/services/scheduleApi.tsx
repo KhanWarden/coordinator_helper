@@ -1,27 +1,34 @@
 import axios from 'axios'
 
-const API_URL = 'https://api.taldybayev.ru/api/v1/schedule/'
+const API_URL = import.meta.env.VITE_API_URL
 
 export const getSchedule = async (date: string) => {
-    const response = await axios.get(API_URL + date)
+    const response = await axios.get(`${API_URL}/api/v1/schedule/${date}`)
     return response.data
 }
 
-
-
-export const postScheduleText = async (text: string) => {
-    const res = await fetch('https://localhost:8000/api/v1/schedule/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ content: text }),
-    })
-
-    if (!res.ok) {
-        throw new Error('Ошибка при сохранении')
+export const saveSchedule = async (scheduleDate: string | null, teams: any) => {
+    try {
+        const response = await axios.post(`${API_URL}/api/v1/schedule/`, {
+            date: scheduleDate,
+            teams: teams
+        });
+        return response.data;
+    } catch (err) {
+        console.error("Ошибка при сохранении расписания:", err);
+        throw err;
     }
-
-    return res.json()
 }
+
+export const getTeamStaff = async (date: string) => {
+    const res = await fetch(`${API_URL}/api/v1/schedule/${date}/teams/`);
+    if (res.status === 404) {
+        throw { response: { status: 404 } }; // имитируем axios-подобную ошибку
+    }
+    if (!res.ok) {
+        throw new Error("Ошибка при получении данных по людям");
+    }
+    return await res.json();
+};
+
 
