@@ -21,7 +21,7 @@ export const saveSchedule = async (scheduleDate: string | null, teams: any) => {
 }
 
 export const getTeamStaff = async (date: string) => {
-    const res = await fetch(`${API_URL}/api/v1/schedule/${date}/teams/`);
+    const res = await fetch(`${API_URL}/api/v1/schedule/${date}/teams`);
     if (res.status === 404) {
         throw { response: { status: 404 } }; // имитируем axios-подобную ошибку
     }
